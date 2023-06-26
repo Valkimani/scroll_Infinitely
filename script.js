@@ -8,7 +8,7 @@ let photosArray = [];
 // Unsplash API
 // Create a URL constant
 const count = 10;
-const apiKey = 'API KEY HERE';
+const apiKey = 'API_KEY_HERE';
 const topics = 'topics'
 const apiUrl = `https://api.unsplash.com/photos/random/?client_id=${apiKey}&count=${count}&topics=${topics}`;
 
@@ -26,7 +26,9 @@ img.setAttribute('src', photo.urls.regular);
 img.setAttribute('alt', photo.alt_description)
 img.setAttribute('title',photo.alt_description)
 img.setAttribute('location',photo.topic_submissions)
-
+// Put <img> inside <a>, then put both inside imageContainer element
+item.appendChild(img);
+imageContainer.appendChild(item);
     });
 }
 // Get photos from unsplash API
