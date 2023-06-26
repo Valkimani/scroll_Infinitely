@@ -8,7 +8,7 @@ let photosArray = [];
 // Unsplash API
 // Create a URL constant
 const count = 10;
-const apiKey = 'API-KEY_HERE';
+const apiKey = 'API_KEY_HERE';
 const topics = 'topics'
 const apiUrl = `https://api.unsplash.com/photos/random/?client_id=${apiKey}&count=${count}&topics=${topics}`;
 
@@ -16,7 +16,8 @@ const apiUrl = `https://api.unsplash.com/photos/random/?client_id=${apiKey}&coun
 async function getPhotos(){
     try{
 const response = await fetch(apiUrl);
-const data = await response.json();
+photosArray = await response.json();
+console.log(photosArray)
 console.log(data)
     }catch(error){
         // catch error here
@@ -25,3 +26,5 @@ console.log(data)
 
 // On load 
 getPhotos();
+
+// 
