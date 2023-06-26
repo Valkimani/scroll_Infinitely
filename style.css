@@ -16,3 +16,22 @@ h1{
     font-size: 50px;
     letter-spacing: 5px;
 }
+/* Add an opaque background*/
+.loader {
+    /* loader stays in the same position when the user scrolls */
+    position: fixed;
+    /* Extend loader in the entire page */
+    top: 0;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    background: rgb(255, 255, 255, 0.8);
+}
+/* Center loader vertically and horizontally */
+
+.loader img {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
