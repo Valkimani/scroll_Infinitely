@@ -1,5 +1,11 @@
-// Unsplash API
 
+// Elements for each object
+const imageContainer = document.getElementById('image-container');
+const loader = document.getElementById('loader');
+
+// Images will change with every request hence the global variable is using let
+let photosArray = [];
+// Unsplash API
 // Create a URL constant
 const count = 10;
 const apiKey = 'API-KEY_HERE';
