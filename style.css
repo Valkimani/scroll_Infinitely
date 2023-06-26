@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&family=Sen&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap');
 
 html{
     box-sizing: border-box;
@@ -6,5 +6,13 @@ html{
 
 body{
     margin: 0;
-    font-style: Bebas Neue, sans-serif;
+    font-family: Bebas Neue, sans-serif;
+    background: whitesmoke;
+}
+h1{
+    text-align: center;
+    margin-top: 25px;
+    margin-bottom: 15px;
+    font-size: 50px;
+    letter-spacing: 5px;
 }
