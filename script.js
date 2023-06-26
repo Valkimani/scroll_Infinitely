@@ -12,13 +12,21 @@ const apiKey = 'API_KEY_HERE';
 const topics = 'topics'
 const apiUrl = `https://api.unsplash.com/photos/random/?client_id=${apiKey}&count=${count}&topics=${topics}`;
 
+// Create elements for links & photos, Add to DOM
+function showPhotos(){
+    // Run function for each object in photoArray
+    photosArray.forEach((photo) => {
+
+    });
+}
 // Get photos from unsplash API
 async function getPhotos(){
     try{
 const response = await fetch(apiUrl);
 photosArray = await response.json();
-console.log(photosArray)
-console.log(data)
+showPhotos();
+// console.log(photosArray)
+// console.log(data)
     }catch(error){
         // catch error here
     }
@@ -27,4 +35,3 @@ console.log(data)
 // On load 
 getPhotos();
 
-// 
