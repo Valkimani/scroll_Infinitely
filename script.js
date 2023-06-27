@@ -53,13 +53,22 @@ showPhotos();
     }
 }
 
-// Check whether scrolling near the bottom of the page loads ore photos
-// Target the scroll event
+// Check whether `scrolling near the bottom of the page loads ore photos`
+// Target the scroll event. Only want to call the scroll event once when we get to the bottom of the page
 window.addEventListener('scroll', () => {
 // eventListener function
-console.log('scrolled');
+// Delete console log and replace with an if statement
+// Browser window height plus how height from the top of the page is >= the right side of the if statement i.e  document.body.offsetHeight
+// subtract 1000px
+if (window.innerHeight + window.scrollY >= document.body.offsetHeight - 1000) {
+    console.log('window.innerHeight:', window.innerHeight);
+    console.log(' window.scrollY:', window.innerHeight);
+}
 });
-console.log(window)
+
+
 // On load 
 getPhotos();
 
+// Delete console log and replace with an if statement where the browser window height plus height from the top of the page is >= the right side of the if statement i.e  document.body.offsetHeight
+// subtract 1000px
