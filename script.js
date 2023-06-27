@@ -3,6 +3,11 @@
 const imageContainer = document.getElementById('image-container');
 const loader = document.getElementById('loader');
 
+// wWen the page first loads. 
+let ready = false;
+let imagesLoaded= 0;
+// Track when all images have loaded
+let totalImages= 0;
 // Images will change with every request hence the global variable is using let
 let photosArray = [];
 // Unsplash API
@@ -66,12 +71,8 @@ window.addEventListener('scroll', () => {
 // Browser window height plus how height from the top of the page is >= the right side of the if statement i.e  document.body.offsetHeight
 // subtract 1000px
 if (window.innerHeight + window.scrollY >= document.body.offsetHeight - 1000) {
-    console.log('window.innerHeight:', window.innerHeight);
-    console.log(' window.scrollY:', window.innerHeight);
 }
 });
-
-
 // On load 
 getPhotos();
 
