@@ -10,3 +10,4 @@ https://unsplash.com/documentation#creating-a-developer-account
 
 https://www.w3schools.com/jsref/dom_obj_event.asp
 
+https://www.w3schools.com/jsref/event_onload.asp
