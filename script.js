@@ -3,7 +3,7 @@
 const imageContainer = document.getElementById('image-container');
 const loader = document.getElementById('loader');
 
-// wWen the page first loads. 
+// When the page first loads. 
 let ready = false;
 let imagesLoaded= 0;
 // Track when all images have loaded
@@ -12,13 +12,19 @@ let totalImages= 0;
 let photosArray = [];
 // Unsplash API
 // Create a URL constant
-const count = 40;
+const count = 30;
 const apiKey = 'API_KEY';
 const apiUrl = `https://api.unsplash.com/photos/random/?client_id=${apiKey}&count=${count}`;
 
 // check if images have loaded
 function imageLoaded(){
-    console.log('image loaded success');
+    // Add increment loaded value
+    imagesLoaded++;
+    console.log(imagesLoaded);
+    if(imageLoaded === totalImages){
+        ready = true;
+        console.log('ready =', ready);
+    }
 }
 // Create a helper function to set Attributes on DOM and avoid repetition 
 function setAttributes(element, attributes) {
@@ -28,6 +34,9 @@ element.setAttribute(key, attributes[key])
 }
 // Create elements for links & photos, Add to DOM
 function showPhotos(){
+    imagesLoaded = 0;
+    totalImages = photosArray.length;
+    console.log('total images', totalImages)
     // Run function for each object in photoArray
     photosArray.forEach((photo) => {
 // <a> element link to unsplash
@@ -70,7 +79,10 @@ window.addEventListener('scroll', () => {
 // Delete console log and replace with an if statement
 // Browser window height plus how height from the top of the page is >= the right side of the if statement i.e  document.body.offsetHeight
 // subtract 1000px
-if (window.innerHeight + window.scrollY >= document.body.offsetHeight - 1000) {
+if (window.innerHeight + window.scrollY >= document.body.offsetHeight - 1000 && ready) {
+    // Once this runs, this will only be ready again in imagesLoaded equals total images
+    ready = false;
+    getPhotos();
 }
 });
 // On load 
