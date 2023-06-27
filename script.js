@@ -1,10 +1,3 @@
-// Create a helper function to set Attributes on DOM and avoid repetition 
-
-function setAttributes(element, attributes) {
-    for(const key in attributes){
-element.setAttribute(key, attributes[key])
-    }
-}
 
 // Elements for each object
 const imageContainer = document.getElementById('image-container');
@@ -16,9 +9,15 @@ let photosArray = [];
 // Create a URL constant
 const count = 10;
 const apiKey = 'API_KEY';
-// const topics = 'topics'
 const apiUrl = `https://api.unsplash.com/photos/random/?client_id=${apiKey}&count=${count}`;
 
+// Create a helper function to set Attributes on DOM and avoid repetition 
+
+function setAttributes(element, attributes) {
+    for(const key in attributes){
+element.setAttribute(key, attributes[key])
+    }
+}
 // Create elements for links & photos, Add to DOM
 function showPhotos(){
     // Run function for each object in photoArray
@@ -26,7 +25,7 @@ function showPhotos(){
 // <a> element link to unsplash
 const item = document.createElement('a');
 setAttributes(item, {
-    href:photo.link.html,
+    href:photo.links.html,
     target: '_blank',
 });
 // Create <img> for photo
@@ -53,6 +52,14 @@ showPhotos();
         // catch error here
     }
 }
+
+// Check whether scrolling near the bottom of the page loads ore photos
+// Target the scroll event
+window.addEventListener('scroll', () => {
+// eventListener function
+console.log('scrolled');
+});
+console.log(window)
 // On load 
 getPhotos();
 
