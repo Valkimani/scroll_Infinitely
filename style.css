@@ -19,13 +19,18 @@ h1{
 /* Add an opaque background*/
 .loader {
     /* loader stays in the same position when the user scrolls */
-    position: fixed;
+    /* position: fixed; */
     /* Extend loader in the entire page */
-    top: 0;
+    /* top: 0;
     bottom: 0;
     right: 0;
     left: 0;
-    background: rgb(255, 255, 255, 0.8);
+    background: rgb(255, 255, 255, 0.8); */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 10rem;
+  
 }
 /* Center loader vertically and horizontally */
 
@@ -39,7 +44,7 @@ h1{
 /* Img container */
 .image-container {
     /* left to right then top to bottom */
-    margin: 10px;
+    margin: 10px 25%;
 }
 /* img element child of the img container class */ 
 .image-container img{
