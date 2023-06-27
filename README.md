@@ -2,13 +2,13 @@
 
 # scroll_Infinitely
 
-![Scroll Infinitely Demo](./images/scrollinfinitelydemo.gif)
+![Scroll Infinitely Demo](images/scrollinfinitelydemo.gif)
+
 
 ## Functionality 
 Using unsplash API to allow us to return high quality images that will allow the showcase of the infinite scroll. Using GET request to retrieve random photos.
 API key is required
 
-## Deployed Site
 
 
 ## UserStory
